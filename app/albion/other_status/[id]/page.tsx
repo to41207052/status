@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 
 const OtherStatus: React.FC = () => {
     const router = useRouter();
-    const id = router;
+    // const id:string = router; 
+    const id:string = "qJkHQXYsQI-_H71DF0Qw0Q";  //ここでオブジェクトのままになっているのでidが文字列ではない
     console.log(router)
     const [data, setData] = useState<mystatus | null>(null);
 
@@ -13,8 +14,8 @@ const OtherStatus: React.FC = () => {
         const fetchData = async () => {
             // const res = await fetch(`https://ori-api.onrender.com/albion/status/qJkHQXYsQI-_H71DF0Qw0Q`);
                 const res = await fetch(`https://ori-api.onrender.com/albion/status/${id}`);
-                const data = await res.json();
-                console.log(data)
+                const data:mystatus = await res.json();
+                console.log(`HEEEEELEOEOEPWFJ${JSON.stringify(router)}`)
                 setData(data);
             
         };
@@ -22,9 +23,8 @@ const OtherStatus: React.FC = () => {
         if (id) {
             fetchData();
         }
-    }, [id]);
+    }, [id, router]);
 
-    console.log(data.Id)
 
     return (
         <><div>

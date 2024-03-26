@@ -1,4 +1,4 @@
-// mystatusで使用
+// mystatus, otherStatus で使用
 interface mystatus {
     Name : string, // 名前
     Id: string, // ID
