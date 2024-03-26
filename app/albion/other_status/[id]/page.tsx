@@ -14,6 +14,7 @@ const OtherStatus: React.FC = () => {
             // const res = await fetch(`https://ori-api.onrender.com/albion/status/qJkHQXYsQI-_H71DF0Qw0Q`);
                 const res = await fetch(`https://ori-api.onrender.com/albion/status/${id}`);
                 const data = await res.json();
+                console.log(data)
                 setData(data);
             
         };
@@ -23,7 +24,7 @@ const OtherStatus: React.FC = () => {
         }
     }, [id]);
 
-    console.log(data)
+    console.log(data.Id)
 
     return (
         <><div>

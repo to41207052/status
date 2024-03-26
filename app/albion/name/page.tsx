@@ -39,7 +39,8 @@ const NamePage: React.FC = () => {
                         <div>
                             {searchResult.players.map((player, index) => (
                             <a key={index} href={`/albion/other_status/${player.Id}`}>
-                            <pre>{JSON.stringify(player.Name)}</pre>
+                                
+                            <pre>{JSON.stringify(`name: ${player.Name}   id: ${player.Id}`)}</pre>
                             </a>
                             ))}
                         </div>
