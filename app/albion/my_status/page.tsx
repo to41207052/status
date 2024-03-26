@@ -23,7 +23,7 @@ export default async function MyStatus(){
         <>
         <div>
          
-            <Home />    
+            <Home /><br/>
       
         </div>
         <div>
