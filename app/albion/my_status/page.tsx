@@ -45,7 +45,7 @@ export default async function MyStatus(){
             <p>釣り名声: {data.LifetimeStatistics.FishingFame}</p>
             <p>農業名声: {data.LifetimeStatistics.FarmingFame}</p>
             <p>クリスタルリーグ: {data.LifetimeStatistics.CrystalLeague}</p>
-            <p>採集データ更新日: {data.LifetimeStatistics.Timestamp}</p>
+            <p>最終データ更新日: {data.LifetimeStatistics.Timestamp}</p>
         </div>
         <div>
             {/* footer */}
