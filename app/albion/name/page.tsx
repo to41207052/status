@@ -34,12 +34,11 @@ const NamePage: React.FC = () => {
                     placeholder="Enter name and see the results"
                     className='border border-brack' />
                 <div>
-                    {searchResult ? (
+                    {searchResult && searchResult.players ? (
                         
                         <div>
                             {searchResult.players.map((player, index) => (
                             <a key={index} href={`/albion/other_status/${player.Id}`}>
-                            {/* <a key={index} href={`/albion/other_status`}> */}
                             <pre>{JSON.stringify(player.Name)}</pre>
                             </a>
                             ))}
