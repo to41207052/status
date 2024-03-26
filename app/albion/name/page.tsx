@@ -1,10 +1,9 @@
-
-
-export default async function MyStatus(){
+"use client"
+export default async function whoStatus(){
     async function create():Promise<ApiResponse>{
-        'use server'
+        
         const fetchMyStatus = async():Promise<ApiResponse> => {   
-            const res = await fetch("http://localhost:3300/albion/katura")
+            const res = await fetch("https://ori-api.onrender.com/albion/katura")
             const data = await res.json();
             return data;
         };
