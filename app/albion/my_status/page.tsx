@@ -27,6 +27,7 @@ export default async function MyStatus(){
       
         </div>
         <div>
+            
             <p>ID: {data.Id}</p>
             <p>Name: {data.Name}</p>
             <p>Guild: {data.GuildName}</p>

@@ -1,3 +1,4 @@
+// mystatusで使用
 interface mystatus {
     Name : string, // 名前
     Id: string, // ID
@@ -66,6 +67,10 @@ interface mystatus {
   }
 }
 
+// name検索で使用
+interface guilds {
+  Name: string
+}
 interface Player {
     Id: string;
     Name: string;

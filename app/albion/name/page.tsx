@@ -5,7 +5,7 @@ import Home from '@/app/page';
 
 const NamePage: React.FC = () => {
     const [name, setName] = useState('');
-    const [searchResult, setSearchResult] = useState<any>(null);
+    const [searchResult, setSearchResult] = useState<ApiResponse>();
 
     const fetchData = async (searchTerm: string) => {
         try {
@@ -34,7 +34,15 @@ const NamePage: React.FC = () => {
                     placeholder="Enter name and see the results" />
                 <div>
                     {searchResult ? (
-                        <pre>{JSON.stringify(searchResult, null, 2)}</pre>
+                        
+                        <div>
+                            {searchResult.players.map((player, index) => (
+                            <a key={index} href={`/albion/other_status/${player.Id}`}>
+                            {/* <a key={index} href={`/albion/other_status`}> */}
+                            <pre>{JSON.stringify(player.Name)}</pre>
+                            </a>
+                            ))}
+                        </div>
                     ) : (
                         <div>No data</div>
                     )}
