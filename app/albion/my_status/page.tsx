@@ -4,7 +4,7 @@ export default async function MyStatus(){
     async function create():Promise<mystatus>{
         'use server'
         const fetchMyStatus = async():Promise<mystatus> => {   
-            const res = await fetch("http://localhost:3300/albion/mystatus")
+            const res = await fetch("https://ori-api.onrender.com/albion/mystatus")
             const data = await res.json();
             return data;
         };
