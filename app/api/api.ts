@@ -22,3 +22,9 @@ export class FetchMyStatus{
         })
     }
 }
+
+export const fetchStatus = async (name: string): Promise<ApiResponse> => {
+    const res = await fetch(`https://ori-api.onrender.com/albion/${name}`);
+    const data = await res.json();
+    return data;
+}

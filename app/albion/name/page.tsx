@@ -1,34 +1,44 @@
-"use client"
-export default async function whoStatus(){
-    async function create():Promise<ApiResponse>{
-        
-        const fetchMyStatus = async():Promise<ApiResponse> => {   
-            const res = await fetch("https://ori-api.onrender.com/albion/katura")
-            const data = await res.json();
-            return data;
-        };
-        return fetchMyStatus();
-    }
-    const fetechData = async () => {
-        const result = await create();
-        return result;
+'use client'
+import React, { useState } from 'react';
+import { fetchStatus } from '@/app/api/api';
+
+const NamePage: React.FC = () => {
+    const [name, setName] = useState('');
+    const [searchResult, setSearchResult] = useState<any>(null);
+
+    const fetchData = async (searchTerm: string) => {
+        try {
+            const result = await fetchStatus(searchTerm);
+            setSearchResult(result);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     };
 
-    const apires = await fetechData();
-    const data:Player[] = apires.players 
-    console.log(`${JSON.stringify(data[0])}`)
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const searchTerm = event.target.value;
+        setName(searchTerm);
+        // 入力値が変更されるたびに検索を実行
+        fetchData(searchTerm);
+    };
 
-    
     return (
         <div>
-            <h1>name: {data[0].Name}</h1>
-            <h1>guild: {data[0].GuildName}</h1>
-            <h1>name: {data[1].Name}</h1>
-            <h1>guild: {data[1].GuildName}</h1>
-            <h1>name: {data[2].Name}</h1>
-            <h1>guild: {data[2].GuildName}</h1>
+            <input 
+                type="text" 
+                value={name} 
+                onChange={handleInputChange} 
+                placeholder="Enter name and see the results"
+            />
+            <div>
+                {searchResult ? (
+                    <pre>{JSON.stringify(searchResult, null, 2)}</pre>
+                ) : (
+                    <div>No data</div>
+                )}
+            </div>
         </div>
-     
-    )
-}
-// http://localhost:3000/albion/name
+    );
+};
+
+export default NamePage;

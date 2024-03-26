@@ -6,26 +6,26 @@ const MyComponent: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [inputText, setInputText] = useState<string>(''); // 入力テキストを管理するstate
 
-  useEffect(() => {
-    // 最初のロード時にはデータを取得
-    fetchComment();
-  }, []);
+  // useEffect(() => {
+  //   // 最初のロード時にはデータを取得
+  //   fetchComment();
+  // }, []);
 
-  const fetchComment = () => {
-    fetch("http://localhost:3300/comment")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.text();
-      })
-      .then((data: string) => {
-        setData(data);
-      })
-      .catch((error: any) => {
-        setError(error.message);
-      });
-  };
+  // const fetchComment = () => {
+  //   fetch("http://localhost:3300/comment")
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.text();
+  //     })
+  //     .then((data: string) => {
+  //       setData(data);
+  //     })
+  //     .catch((error: any) => {
+  //       setError(error.message);
+  //     });
+  // };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
@@ -34,7 +34,7 @@ const MyComponent: React.FC = () => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       // Enterキーが押されたら新しいデータを取得
-      fetchComment();
+      // fetchComment();
     }
   };
 

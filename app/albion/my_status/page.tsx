@@ -1,3 +1,4 @@
+import Home from "@/app/page";
 
 
 export default async function MyStatus(){
@@ -21,7 +22,9 @@ export default async function MyStatus(){
     return (
         <>
         <div>
-            {/* header */}
+         
+            <Home />    
+      
         </div>
         <div>
             <p>ID: {data.Id}</p>
