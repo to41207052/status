@@ -1,8 +1,8 @@
 # Albion Online の 名前検索APP
 
 ### トップページにアクセス
-URL
+URL https://status-ten-alpha.vercel.app/<br>
 
-1: 作者のステータス
-2: 名前を検索します
+1: 作者のステータス<br>
+2: 名前を検索します<br>
 
