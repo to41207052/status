@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { fetchStatus } from '@/app/api/api';
+import Home from '@/app/page';
 
 const NamePage: React.FC = () => {
     const [name, setName] = useState('');
@@ -23,21 +24,22 @@ const NamePage: React.FC = () => {
     };
 
     return (
-        <div>
-            <input 
-                type="text" 
-                value={name} 
-                onChange={handleInputChange} 
-                placeholder="Enter name and see the results"
-            />
-            <div>
-                {searchResult ? (
-                    <pre>{JSON.stringify(searchResult, null, 2)}</pre>
-                ) : (
-                    <div>No data</div>
-                )}
-            </div>
-        </div>
+        <><div>
+            <Home />
+        </div><div>
+                <input
+                    type="text"
+                    value={name}
+                    onChange={handleInputChange}
+                    placeholder="Enter name and see the results" />
+                <div>
+                    {searchResult ? (
+                        <pre>{JSON.stringify(searchResult, null, 2)}</pre>
+                    ) : (
+                        <div>No data</div>
+                    )}
+                </div>
+            </div></>
     );
 };
 
