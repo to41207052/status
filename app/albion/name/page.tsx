@@ -25,13 +25,14 @@ const NamePage: React.FC = () => {
 
     return (
         <><div>
-            <Home />
+            <Home /><br />
         </div><div>
                 <input
                     type="text"
                     value={name}
                     onChange={handleInputChange}
-                    placeholder="Enter name and see the results" />
+                    placeholder="Enter name and see the results"
+                    className='border border-brack' />
                 <div>
                     {searchResult ? (
                         
