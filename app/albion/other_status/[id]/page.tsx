@@ -1,12 +1,12 @@
 'use client'
 import Home from '@/app/page';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const OtherStatus: React.FC = () => {
-    const router = useRouter();
-    // const id:string = router; 
-    const id:string = "qJkHQXYsQI-_H71DF0Qw0Q";  //ここでオブジェクトのままになっているのでidが文字列ではない
+    const router = useParams();
+    const id:string = router.id; 
+    // const id:string = "qJkHQXYsQI-_H71DF0Qw0Q";  //ここでオブジェクトのままになっているのでidが文字列ではない
     console.log(router)
     const [data, setData] = useState<mystatus | null>(null);
 

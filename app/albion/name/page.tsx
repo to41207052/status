@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { fetchStatus } from '@/app/api/api';
 import Home from '@/app/page';
+import Link from 'next/link';
 
 const NamePage: React.FC = () => {
     const [name, setName] = useState('');
@@ -38,10 +39,10 @@ const NamePage: React.FC = () => {
                         
                         <div>
                             {searchResult.players.map((player, index) => (
-                            <a key={index} href={`/albion/other_status/${player.Id}`}>
+                            <Link key={index} href={`/albion/other_status/${player.Id}`}>
                                 
                             <pre>{JSON.stringify(`name: ${player.Name}   id: ${player.Id}`)}</pre>
-                            </a>
+                            </Link>
                             ))}
                         </div>
                     ) : (
