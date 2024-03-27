@@ -1,10 +1,10 @@
 'use client'
-import React, { useState } from 'react';
-import { fetchStatus } from '@/app/api/api';
-import Link from 'next/link';
+import Link from "next/link";
+import { useState } from "react";
+import { fetchStatus } from "../api/api";
 
-const NamePage: React.FC = () => {
-    const [name, setName] = useState('');
+export default function Menu({ children }) {
+  const [name, setName] = useState('');
     const [searchResult, setSearchResult] = useState<ApiResponse>();
 
     const fetchData = async (searchTerm: string) => {
@@ -22,9 +22,18 @@ const NamePage: React.FC = () => {
         // 入力値が変更されるたびに検索を実行
         fetchData(searchTerm);
     };
-
-    return (
-        <><div>
+    
+  return (
+    <>
+    <header>
+      <div>
+        <div>
+          <img src="" alt="アバタ画像" />
+          <p>名前検索</p>
+       </div>
+       <Link href="/albion">RESET(topに戻る)</Link><br />
+      </div>
+      <div>
                 <input
                     type="text"
                     value={name}
@@ -46,8 +55,11 @@ const NamePage: React.FC = () => {
                         <div>詳細</div>
                     )}
                 </div>
-            </div></>
-    );
-};
+            </div>
+    </header>
+    <main>
+      {children}
+    </main></>
+  );
+}
 
-export default NamePage;
