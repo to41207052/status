@@ -1,5 +1,5 @@
 // mystatus, otherStatus で使用
-interface mystatus {
+interface myStatus {
     Name : string, // 名前
     Id: string, // ID
     GuildName: string, //ギルド

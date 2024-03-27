@@ -1,21 +1,20 @@
 'use client'
 import Home from '@/app/page';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const OtherStatus: React.FC = () => {
     const router = useParams();
-    const id:string = router.id; 
-    // const id:string = "qJkHQXYsQI-_H71DF0Qw0Q";  //ここでオブジェクトのままになっているのでidが文字列ではない
+    const id:string | string[] = router.id; 
     console.log(router)
-    const [data, setData] = useState<mystatus | null>(null);
+    const [data, setData] = useState<myStatus | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            // const res = await fetch(`https://ori-api.onrender.com/albion/status/qJkHQXYsQI-_H71DF0Qw0Q`);
+
                 const res = await fetch(`https://ori-api.onrender.com/albion/status/${id}`);
-                const data:mystatus = await res.json();
-                console.log(`HEEEEELEOEOEPWFJ${JSON.stringify(router)}`)
+                const data:myStatus = await res.json();
+
                 setData(data);
             
         };

@@ -2,9 +2,9 @@ import Home from "@/app/page";
 
 
 export default async function MyStatus(){
-    async function create():Promise<mystatus>{
+    async function create():Promise<myStatus>{
         'use server'
-        const fetchMyStatus = async():Promise<mystatus> => {   
+        const fetchMyStatus = async():Promise<myStatus> => {   
             const res = await fetch("https://ori-api.onrender.com/albion/mystatus")
             const data = await res.json();
             return data;
@@ -15,7 +15,7 @@ export default async function MyStatus(){
         const result = await create();
         return result;
     };
-    const data: mystatus = await fetechData();
+    const data: myStatus = await fetechData();
     console.log(`${JSON.stringify(data)}`)
 
     
