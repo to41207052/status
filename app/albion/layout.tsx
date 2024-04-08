@@ -26,38 +26,39 @@ export default function Menu({ children }) {
   return (
     <>
     <header>
-      <div>
+      <div className="flex">
+        <div >
+          <img src="https://ori-api.onrender.com/albion/avatar" alt="アバタ画像" />
+        </div>
         <div>
-          <img src="" alt="アバタ画像" />
-          <p>名前検索</p>
-       </div>
-       <Link href="/albion">RESET(topに戻る)</Link><br />
-      </div>
-      <div>
-                <input
+          <p className="mt-20 text-5xl">名前検索</p>
+          <Link href="/albion">RESET(topに戻る)</Link><br />
+          <input
                     type="text"
                     value={name}
                     onChange={handleInputChange}
                     placeholder="Enter name and see the results"
                     className='border border-black' />
-                <div>
-                    {searchResult && searchResult.players ? (
-                        
-                        <div>
-                            {searchResult.players.map((player, index) => (
-                            <Link key={index} href={`/albion/other_status/${player.Id}`}>
-                                
-                            <pre>{JSON.stringify(`name: ${player.Name}   id: ${player.Id}`)}</pre>
-                            </Link>
-                            ))}
-                        </div>
-                    ) : (
-                        <div>詳細</div>
-                    )}
-                </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          {searchResult && searchResult.players ? (
+            <div>
+              <p>検索結果</p>
+              {searchResult.players.map((player, index) => (
+              <Link key={index} href={`/albion/other_status/${player.Id}`}>
+                <pre>{JSON.stringify(`name: ${player.Name}   id: ${player.Id}`)}</pre>
+              </Link>
+              ))}
             </div>
+          ) : (
+            <div>詳細</div>
+          )}
+        </div>
+      </div>
     </header>
-    <main>
+    <main className="ml-4">
       {children}
     </main></>
   );

@@ -1,3 +1,5 @@
+
+
 // commentの取得
 export class FetchComment{
     fetchComment = () => { 
@@ -29,3 +31,5 @@ export const fetchStatus = async (name: string): Promise<ApiResponse> => {
     const data = await res.json();
     return data;
 }
+
+
