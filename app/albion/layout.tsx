@@ -2,10 +2,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import { fetchStatus } from "../api/api";
+import { ReactNode } from "react";
 
 
 
-export default function Menu({ children }: Children.children) {
+export default function Menu({ children }: { children: ReactNode }) {
   const [name, setName] = useState('');
     const [searchResult, setSearchResult] = useState<ApiResponse>();
 

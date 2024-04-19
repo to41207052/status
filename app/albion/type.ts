@@ -96,46 +96,4 @@ interface Player {
   }
   
 
-  // Children で使用
-  interface Payload {
-    status: string;
-    reason: null | any; // あなたのデータによって型を指定する
-    _response: {
-      _bundlerConfig: null | any; // あなたのデータによって型を指定する
-      _moduleLoading: null | any; // あなたのデータによって型を指定する
-      _chunks: object;
-      _stringDecoder: object;
-      _rowState: number;
-      _rowID: number;
-      _rowTag: number;
-      _rowLength: number;
-      _buffer: any[]; // あなたのデータによって型を指定する
-    };
-  }
-  
-  interface Template {
-    type: Payload;
-    key: null;
-    ref: null;
-    props: object; // あなたのデータによって型を指定する
-    _owner: null;
-    _store: object; // あなたのデータによって型を指定する
-  }
-  
-  interface Children {
-    parallelRouterKey: string;
-    segmentPath: string[];
-    hasLoading: boolean;
-    template: Template;
-    styles: null;
-  }
-  
-  interface Data {
-    type: Payload;
-    key: null;
-    ref: null;
-    props: Children;
-    _owner: null;
-    _store: object; // あなたのデータによって型を指定する
-  }
   
