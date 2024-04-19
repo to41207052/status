@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { fetchStatus } from "../api/api";
 
-export default function Menu({ children }) {
+
+
+export default function Menu({ children }: Children.children) {
   const [name, setName] = useState('');
     const [searchResult, setSearchResult] = useState<ApiResponse>();
 
@@ -22,6 +24,8 @@ export default function Menu({ children }) {
         // 入力値が変更されるたびに検索を実行
         fetchData(searchTerm);
     };
+
+    console.log(`aaaaaa${JSON.stringify(children)}`)
     
   return (
     <>
