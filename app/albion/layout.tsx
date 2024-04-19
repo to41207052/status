@@ -38,7 +38,7 @@ export default function Menu({ children }) {
                     value={name}
                     onChange={handleInputChange}
                     placeholder="Enter name and see the results"
-                    className='border border-black' />
+                    className='border border-pink-950 rounded shadow-xl' />
         </div>
       </div>
       <div>
