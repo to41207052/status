@@ -1,4 +1,4 @@
-// mystatus, otherStatus で使用
+// myStatus, otherStatus で使用
 interface myStatus {
     Name : string, // 名前
     Id: string, // ID
@@ -94,4 +94,6 @@ interface Player {
     guilds: any[]; 
     players: Player[];
   }
+  
+
   

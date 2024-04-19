@@ -8,12 +8,14 @@ const OtherStatus: React.FC = () => {
     const id:string | string[] = router.id; 
     console.log(router)
     const [data, setData] = useState<myStatus | null>(null);
+    
 
     useEffect(() => {
         const fetchData = async () => {
 
                 const res = await fetch(`https://ori-api.onrender.com/albion/status/${id}`);
                 const data:myStatus = await res.json();
+                
 
                 setData(data);
             
@@ -33,26 +35,88 @@ const OtherStatus: React.FC = () => {
         </div><div>
                 {data ? (
                     <div>
-                        <h1>OTHER STATUS</h1>
-                        <p>ID: {data.Id}</p>
-                        <p>Name: {data.Name}</p>
-                        <p>Guild: {data.GuildName}</p>
-                        <p>連盟: {data.AllianceName}</p>
-                        <p>死の名声: {data.DeathFame}</p>
-                        <p>殺害の名声: {data.KillFame}</p>
-                        <p>PvE Total: {data.LifetimeStatistics.PvE.Total}</p>
-                        <p>綿採取 合計: {data.LifetimeStatistics.Gathering.Fiber.Total}</p>
-                        <p>皮採取 合計: {data.LifetimeStatistics.Gathering.Hide.Total}</p>
-                        <p>鉱石採取 合計: {data.LifetimeStatistics.Gathering.Ore.Total}</p>
-                        <p>石採取 合計: {data.LifetimeStatistics.Gathering.Rock.Total}</p>
-                        <p>木採取 合計: {data.LifetimeStatistics.Gathering.Wood.Total}</p>
-                        <p>採取全般合計: {data.LifetimeStatistics.Gathering.All.Total}</p>
-                        <p>製造系合計: {data.LifetimeStatistics.Crafting.Total}</p>
-                        <p>釣り名声: {data.LifetimeStatistics.FishingFame}</p>
-                        <p>農業名声: {data.LifetimeStatistics.FarmingFame}</p>
-                        <p>クリスタルリーグ: {data.LifetimeStatistics.CrystalLeague}</p>
-                        <p>最終データ更新日: {data.LifetimeStatistics.Timestamp}</p>
-                    </div>
+                      <table>
+                        <tr>
+                            <th>ID:</th>
+                            <td>{data.Id}</td>
+                        </tr>
+                        <tr>
+                            <th>Name:</th>
+                            <td>{data.Name}</td>
+                        </tr>
+                        <tr>
+                            <th>Guild:</th>
+                            <td>-{data.GuildName}</td>
+                        </tr>
+                        <tr>
+                            <th>連盟:</th>
+                            <td>-{data.AllianceName}</td>
+                        </tr>
+
+                        <tr>
+                            <th>死の名声:</th>
+                            <td>{data.DeathFame}</td>
+                        </tr>
+
+                        <tr>
+                            <th>殺害の名声:</th>
+                            <td>{data.KillFame}</td>
+                        </tr>
+
+                        <tr>
+                            <th>PvE Total:</th>
+                            <td>{data.LifetimeStatistics.PvE.Total}</td>
+                        </tr>
+
+                        <tr>
+                        <th>綿採取 合計:</th>
+                        <td>{data.LifetimeStatistics.Gathering.Fiber.Total}</td>
+                        </tr>
+
+                        <tr>
+                        <th>皮採取 合計:</th>
+                        <td>{data.LifetimeStatistics.Gathering.Hide.Total}</td>
+                        </tr>
+                        <tr>
+                        <th>鉱石採取 合計:</th>
+                        <td>{data.LifetimeStatistics.Gathering.Ore.Total}</td>
+                        </tr>
+                        <tr>
+                        <th>石採取 合計:</th>
+                        <td>{data.LifetimeStatistics.Gathering.Rock.Total}</td>
+                        </tr>
+                        <tr>
+                        <th>木採取 合計:</th>
+                        <td>{data.LifetimeStatistics.Gathering.Wood.Total}</td>
+                        </tr>
+                        <tr>
+                        <th>採取全般合計:</th>
+                        <td>{data.LifetimeStatistics.Gathering.All.Total}</td>
+                        </tr>
+                        <tr>
+                        <th>製造系合計:</th>
+                        <td>{data.LifetimeStatistics.Crafting.Total}</td>
+                        </tr>
+                        <tr>
+                        <th>釣り名声:</th>
+                        <td>{data.LifetimeStatistics.FishingFame}</td>
+                        </tr>
+                        <tr>
+                        <th>農業名声:</th>
+                        <td>{data.LifetimeStatistics.FarmingFame}</td>
+                        </tr>
+                        <tr>
+                        <th>クリスタルリーグ:</th>
+                        <td>{data.LifetimeStatistics.CrystalLeague}</td>
+                        </tr>
+                        <tr>
+                        <th>最終データ更新日:</th>
+                        <td>{data.LifetimeStatistics.Timestamp}</td>
+                        </tr>
+                        </table>
+                  </div>
+
+                  
                 ) : (
                     <div>Loading...</div>
                 )}

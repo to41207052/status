@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    background-color: #fccfa5;
+}
+
+table {
+
+    width: 100%
+}
+th {
+    text-align: left;
+}
+
+td {
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    background: linear-gradient(to right, rgba(237, 192, 150, 1), rgba(237, 192, 150, 0));
+}

@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react';
 import { fetchStatus } from '@/app/api/api';
-import Home from '@/app/page';
 import Link from 'next/link';
 
 const NamePage: React.FC = () => {
@@ -26,14 +25,12 @@ const NamePage: React.FC = () => {
 
     return (
         <><div>
-            <Home /><br />
-        </div><div>
                 <input
                     type="text"
                     value={name}
                     onChange={handleInputChange}
                     placeholder="Enter name and see the results"
-                    className='border border-brack' />
+                    className='border border-black' />
                 <div>
                     {searchResult && searchResult.players ? (
                         
@@ -46,7 +43,7 @@ const NamePage: React.FC = () => {
                             ))}
                         </div>
                     ) : (
-                        <div>No data</div>
+                        <div>詳細</div>
                     )}
                 </div>
             </div></>
