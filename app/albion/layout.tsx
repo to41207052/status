@@ -26,7 +26,7 @@ export default function Menu({ children }: { children: ReactNode }) {
         fetchData(searchTerm);
     };
 
-    console.log(`aaaaaa${JSON.stringify(children)}`)
+
     
   return (
     <>
